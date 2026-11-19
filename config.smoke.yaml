@@ -1,0 +1,22 @@
+# Teste de fumaça SEM rede: modelos "mock" devolvem os testes de examples/toy/canned_tests.py
+# (geradores) e respostas fixas (juízes). Serve para validar o fluxo e as saídas.
+run_name: smoke
+workdir: work
+project:
+  repo_path: examples/toy
+  import_root: "."
+  source_files: ["toy_pkg/validators.py"]
+  min_lines: 3
+  max_targets: 1
+llm:
+  models:
+    - {label: mock_a, provider: mock, family: mock_a, canned: examples/toy/canned_tests.py,
+       mock_oracle: consistent, mock_detects: "yes", mock_relevance: 5}
+    - {label: mock_b, provider: mock, family: mock_b, canned: examples/toy/canned_tests.py,
+       mock_oracle: unclear, mock_detects: unsure, mock_relevance: 3}
+    - {label: mock_c, provider: mock, family: mock_c, canned: examples/toy/canned_tests.py,
+       mock_oracle: inconsistent, mock_detects: "no", mock_relevance: 2}
+  generator_labels: [mock_a, mock_b]     # quem gera; todos os 3 julgam
+judging: {self_judging: flag}
+generation: {samples_per_target: 1}
+execution: {python: auto, max_mutants: 30, jobs: 1}

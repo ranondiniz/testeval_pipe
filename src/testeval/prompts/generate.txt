@@ -1,0 +1,23 @@
+You are an expert test engineer. Write pytest unit tests for the target function below.
+
+Rules:
+- Import the code under test with: from $module import $import_name  (public API only). For methods, instantiate the class first; pass constructor arguments only if the specification mentions them.
+- Each test function tests ONE behaviour and has a descriptive name starting with test_.
+- Derive expected values from the documentation/specification, NOT from guessing what the implementation does.
+- Include boundary values and invalid-input cases when the specification suggests them.
+- No network, randomness, file system access or time dependence.
+- Do not modify the code under test.
+- Reply with a single ```python code block containing only the test code.
+
+## Target
+File: $file
+Qualified name: $qualname
+Signature: $signature
+
+## Specification (docstring)
+$doc
+
+## Source code (context)
+```python
+$context
+```

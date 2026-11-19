@@ -1,0 +1,22 @@
+# saídas das execuções e o repositório-alvo clonado
+work/
+
+# ambiente Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.coverage.*
+
+# segredos (chaves de API só por variável de ambiente)
+.env
+.env.*
+
+# arquivos locais
+*.zip
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,15 @@
+## Specification (docstring)
+$doc
+
+## Function under test
+```python
+$source
+```
+
+## Test to judge (id: $test_id)
+```python
+$test
+```
+
+## Other tests in the same suite
+$suite

@@ -1,0 +1,8 @@
+pytest>=8.0
+coverage>=7.4
+pyyaml>=6.0
+requests>=2.31
+scikit-learn>=1.3
+numpy>=1.26
+# opcional (similaridade por embeddings):
+# sentence-transformers>=2.7
